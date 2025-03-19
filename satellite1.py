@@ -240,9 +240,9 @@ plot_trajectory(selected_satellite, satellites, collisions)
 # Plot collision detection results
 plot_satellites(df, collisions)
 
-# Auto-refresh every 3600 seconds (this is for updating data periodically)
+# Auto-refresh every 60 seconds (this is for updating data periodically)
 while True:
-    time.sleep(3600)
+    time.sleep(60)
     df, satellites = read_tle('active_satellites.txt')
     collisions = detect_collisions(df, threshold)
     plot_satellites(df, collisions)
